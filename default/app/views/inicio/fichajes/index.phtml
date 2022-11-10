@@ -7,7 +7,7 @@
 </div>
 
     <div class="container">
-        <h2 class="page-header">Hola <?php echo Session::get('nombre'); ?></h2>
+        <h2 class="page-header">Tus Fichajes <?php echo Session::get('nombre'); ?></h2>
         <div class="row">
             <div class='col-sm-6'>
                 <?php echo DwForm::open(); ?>
@@ -15,19 +15,10 @@
                     	<?php echo DwForm::number('registro.usuario_id', array('class'=>'hidden'), Session::get('id'), NULL); ?>
                     </p>
                     <p>
-                        <label>ENTRADA:</label>
+                        <label>ELIGE MES:</label>
                         <div class="input-group date" id="id_3">
                             <label for="registro_entrada">entrada<span class="req">*</span></label>
-                            <input id="registro_entrada" name="registro[entrada]" type="datetime-local" value="" class="form-control input-required" onchange="this.value=this.value.toUpperCase()" required="required">
-                            <span class="input-group-addon">
-                            </span>
-                        </div>
-                    </p>
-                    <p>
-                        <label>SALIDA:</label>
-                        <div class="input-group date" id="id_2">
-                            <label for="registro_salida">salida<span class="req">*</span></label>
-                            <input id="registro_salida" name="registro[salida]" type="datetime-local" value="" class="form-control input-required" onchange="this.value=this.value.toUpperCase()" required="required">
+                            <input id="registro_entrada" name="registro[entrada]" type="month" value="<?php date('Y-m'); ?>" class="form-control" onchange="this.value=this.value.toUpperCase()" required="required">
                             <span class="input-group-addon">
                             </span>
                         </div>
@@ -35,7 +26,7 @@
                     <p>
                     	<div class="row">
 				<div class="form-actions">
-				    <?php echo DwForm::send('fichar'); ?>
+				    <?php echo DwForm::send('Selecciona'); ?>
 				</div>
 			</div>
                     </p>
@@ -43,9 +34,4 @@
             </div>
         </div>
     </div>
-SELECT TIMEDIFF('2022-10-28 00:30:00','2022-10-27T20:23')
-SELECT @salida := `salida` FROM `registro` WHERE `id`=13;
-SELECT @entrada := `entrada` FROM `registro` WHERE `id`=13;
-SELECT TIMEDIFF(@salida,@entrada);
-
 

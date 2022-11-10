@@ -48,4 +48,10 @@ SELECT @salida := `salida` FROM `registro` WHERE `id`=13;
 SELECT @entrada := `entrada` FROM `registro` WHERE `id`=13;
 SELECT TIMEDIFF(@salida,@entrada);
 
+<div class="input-group date" id="id_10">
+    <label for="mes">Elige Mes</label>
+    <input id="mes" name="mes" type="month" value="<?php echo date('Y-m'); ?>" class="form-control" onchange="" required="required">
+    <span class="validity"></span>
+  </div>
+  <div>
 
